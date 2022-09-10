@@ -1,0 +1,58 @@
+<div class="contailer-fluid">
+    
+        <div class="row">
+        
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-10">
+                <div class="text-warning h1">Designation
+                    <div class="float-end">
+                      <button class="btn btn-sm btn-info" routerLink="save" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</button>
+                    </div>
+                    </div>
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col" class="text-center">Actions/Total Record(s) <span class="badge bg-warning">{{designations.length}}</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let designation of designations, let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{designation.name}}</td>
+                <td class="text-center">
+        <button class="btn btn-sm btn-primary">Edit</button>&nbsp;|&nbsp;
+        <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+              </tr>
+               
+            </tbody>
+          </table>
+    </div>
+    <div class="col col-lg-1"></div>
+</div>
+    
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Save Designation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ---End Modal--- -->
+
+
+</div>
